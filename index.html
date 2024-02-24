@@ -67,33 +67,19 @@ def update_graph(*args, **kwargs):
         <link rel="stylesheet" href="./assets/css/examples.css" />
         <!-- This script tag bootstraps PyScript -->
         <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
-        <!-- for splashscreen -->
-        <style>
-            #loading { outline: none; border: none; background: transparent }
-        </style>
-        <script type="module">
-            const loading = document.getElementById('loading');
-            addEventListener('py:ready', () => loading.close());
-            loading.showModal();
-        </script>
-        <title>Matplotlib</title>
+        <title>Graph Stuff n Such</title>
         <link rel="icon" type="image/png" href="./assets/favicon.png" />
     </head>
     <body>
-        <dialog id="loading">
-            <h1>Loading...</h1>
-        </dialog>
-		<strong>Graph of Data:</strong>
-    	<div>Type input here:</div>
-    	<input type="text" id="y1" value="1"/>
-    	<input type="text" id="y2" value="2"/>
-    	<input type="text" id="y3" value="3"/>
+	<strong>Graph of Data:</strong>
+	<div>Type input here:</div>
+	<input type="text" id="y1" value="1"/>
+	<input type="text" id="y2" value="2"/>
+	<input type="text" id="y3" value="3"/>
 	<input type="text" id="y4" value="4"/>
 	<button id="submit-button" type="submit" py-click="update_graph">OK</button>
-	<button type="submit" id="btn-load" class="py-button" py-click="loadFromURL">TEST</button>
 	<div id="graph"></div>
         <section class="pyscript">
-            <div id="mpl"></div>
             <script type="py" src="./main.py" config="./pyscript.toml"></script>
         </section>
     </body>
