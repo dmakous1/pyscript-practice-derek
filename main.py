@@ -4,6 +4,33 @@ import numpy as np
 
 from pyscript import display
 
+def update_graph(*args, **kwargs):
+	y1 = Element('y1').element.value
+	y2 = Element('y2').element.value
+	y3 = Element('y3').element.value
+	y4 = Element('y4').element.value
+
+	x = [1,2,3,4]
+	y = [y1,y2,y3,y4]
+	x = np.array(x)
+	y = np.array(y)
+	xfloat = [float(i) for i in x]
+	yfloat = [float(i) for i in y]
+	x_model = np.arange(0.0,50.0,.01)
+	y_model = 2*x_model*x_model
+	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
+	fig1, ax1 = plt.subplots()
+	ax1.scatter(yfloat,xfloat)
+	ax1.set_title("Graph of Data",fontsize=11)
+	ax1.set_xlabel("x variable",fontsize=10)
+	ax1.set_ylabel("y variable",fontsize=10)
+	plt.plot(x_model, y_model)
+	ax1.set_xlim(0,6)
+	ax1.set_ylim(0,50)
+	ax1.margins(y=0)
+	ax1.grid()
+	display(fig1, target='graph', append=False)
+
 # First create the x and y coordinates of the points.
 n_angles = 36
 n_radii = 8
