@@ -9,15 +9,16 @@ def update_graph(event):
 	y2 = pydom["input#y2"][0].value
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
-
-	x = [1,2,3,4]
-	y = [y1,y2,y3,y4]
-	x = np.array(x)
-	y = np.array(y)
+	
+	x = np.array([1,2,3,4])
+	y = np.array([y1,y2,y3,y4])
+	
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
+	
 	x_model = np.arange(0.0,50.0,.01)
 	y_model = 2*x_model*x_model
+	
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
 	fig1, ax1 = plt.subplots()
 	ax1.scatter(xfloat,yfloat)
@@ -29,4 +30,5 @@ def update_graph(event):
 	ax1.set_ylim(0,50)
 	ax1.margins(y=0)
 	ax1.grid()
+	
 	display(fig1, target='graph', append=False)
