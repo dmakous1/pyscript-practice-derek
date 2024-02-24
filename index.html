@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.2.1/core.js"></script>
     <title>Input to Pyscript</title>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 	<py-env>
       - matplotlib
 	</py-env>
@@ -24,7 +24,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import io
 import base64
-from pyscript import document
 
 def update_graph(*args, **kwargs):
 	y1 = Element('y1').element.value
@@ -51,7 +50,7 @@ def update_graph(*args, **kwargs):
 	ax1.set_ylim(0,50)
 	ax1.margins(y=0)
 	ax1.grid()
-	pyscript.display(fig1, target='graph', append=False)
+	display(fig1, target='graph', append=False)
 		</py-script>
   </body>
 </html>
