@@ -54,9 +54,9 @@ def update_graph(*args, **kwargs):
 	ax1.grid()
 	
 	img = io.BytesIO()
-    fig1.savefig(img, format='png',bbox_inches='tight')
-    img.seek(0)
-    encoded = base64.b64encode(img.getvalue())
+    	fig1.savefig(img, format='png',bbox_inches='tight')
+    	img.seek(0)
+    	encoded = base64.b64encode(img.getvalue())
 	graph_string = '<img src="data:image/png;base64, {}">'.format(encoded.decode('utf-8'))
 	Element('graph').element.innerHTML = graph_string
 	</py-script>
