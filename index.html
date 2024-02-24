@@ -94,6 +94,14 @@ def update_graph(*args, **kwargs):
         <section class="pyscript">
             <div id="mpl"></div>
             <script type="py" src="./main.py" config="./pyscript.toml"></script>
+			<strong>Graph of Data:</strong>
+    		<div>Type input here:</div>
+    		<input type="text" id="y1" value="1"/>
+    		<input type="text" id="y2" value="2"/>
+		    <input type="text" id="y3" value="3"/>
+    		<input type="text" id="y4" value="4"/>
+    		<button id="submit-button" type="submit" pys-onClick="update_graph">OK</button>
+			<div id="graph"></div>
         </section>
     </body>
 </html>
