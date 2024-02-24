@@ -2,13 +2,14 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as tri
 import numpy as np
 
+from pyweb import pydom
 from pyscript import display
 
-def update_graph(*args, **kwargs):
-	y1 = Element('y1').element.value
-	y2 = Element('y2').element.value
-	y3 = Element('y3').element.value
-	y4 = Element('y4').element.value
+def update_graph(event):
+	y1 = pydom["input#y1"][0].value
+	y2 = pydom["input#y2"][0].value
+	y3 = pydom["input#y3"][0].value
+	y4 = pydom["input#y4"][0].value
 
 	x = [1,2,3,4]
 	y = [y1,y2,y3,y4]
