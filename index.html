@@ -18,10 +18,8 @@
     <input type="text" id="y3" value="3"/>
     <input type="text" id="y4" value="4"/>
     <button id="submit-button" type="submit" pys-onClick="update_graph">OK</button>
-	<div id="graph"/>
-	
+		<div id="graph"/>
     <py-script output = "graph">
-
 import numpy as np
 import matplotlib.pyplot as plt
 import io
@@ -52,13 +50,7 @@ def update_graph(*args, **kwargs):
 	ax1.set_ylim(0,50)
 	ax1.margins(y=0)
 	ax1.grid()
-	
-	img = io.BytesIO()
-	fig1.savefig(img, format='png',bbox_inches='tight')
-	img.seek(0)
-	encoded = base64.b64encode(img.getvalue())
-	graph_string = '<img src="data:image/png;base64, {}">'.format(encoded.decode('utf-8'))
-	Element('graph').element.innerHTML = graph_string
-	</py-script>
+	pyscript.display(fig1, target='graph', append=False)
+		</py-script>
   </body>
 </html>
